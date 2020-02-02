@@ -1,0 +1,11 @@
+export default function({app, redirect, route}) {
+
+  if (!app.$auth.loggedIn) {
+    return redirect({
+      name: 'auth-Login',
+      query: {
+        redirect: route.fullPath
+      }
+    })
+  }
+}
